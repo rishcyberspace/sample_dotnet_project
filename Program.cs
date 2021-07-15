@@ -20,6 +20,7 @@ namespace DummyApp1
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
+                    webBuilder.UseKestrel(options => { options.Listen(IPAddress.Any, port: 80); });
                     webBuilder.UseStartup<Startup>();
                 });
     }
